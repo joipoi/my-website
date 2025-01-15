@@ -2,12 +2,21 @@ import { getSortedPostsData } from '@/lib/getSortedPostsData';
 import BlogPost from '@/components/BlogPost';
 import MainMenu from '@/components/MainMenu';
 
-export default async function PostPage(props: { params: Promise<{ id: string }> }) {
+export async function generateStaticParams() {
+  const posts = getSortedPostsData(); 
+
+  return posts.map((post) => ({
+    
+    title: post.title.replaceAll(" ", "-"),
+  }))
+}
+
+export default async function PostPage(props: { params: Promise<{ title: string }> }) {
   const params = await props.params;
 
   const posts =  getSortedPostsData(); 
 
-  const post = posts.find((p) => p.id === params.id); 
+  const post = posts.find((p) => p.title.replaceAll(" ", "-") === params.title); 
   
   
     if (!post) {
