@@ -2,7 +2,7 @@
 title: 'Using the Slack API'
 date: '2020-01-02'
 tags: 
-  - API
+  - api
   - programming
 ---
 ## Intro

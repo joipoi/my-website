@@ -2,10 +2,10 @@
 title: 'Configuring Static IP(Linux)'
 date: '2025-01-14'
 tags: 
-  - Internet
+  - internet
   - sys-admin
-  - Linux
-  - Network
+  - linux
+  - network
 ---
 ## Intro
 

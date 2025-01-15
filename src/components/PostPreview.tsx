@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import {PostData} from '@/lib/PostData';
+import createSlug from '@/lib/createSlug';
 
 export default function PostPreview({ post }: { post: PostData }){
-    let slug = post.title.replaceAll(" ", "-");
+    const slug = createSlug(post.title);
     return (
         <div className=" p-4 mb-4 hover:shadow-md transition-shadow duration-300">
             <Link key={slug} href={`/blog/${slug}`} className="block">
